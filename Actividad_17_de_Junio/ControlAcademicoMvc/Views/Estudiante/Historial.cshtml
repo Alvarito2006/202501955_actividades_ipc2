@@ -1,0 +1,23 @@
+@model Estudiante
+
+@{
+    ViewData["Title"] = "Historial academico";
+}
+
+<section class="mb-4">
+    <h1 class="h3">Historial academico</h1>
+    <p class="text-muted mb-0">Consulta semantica para el carne @Model.Carne.</p>
+</section>
+
+<dl class="row">
+    <dt class="col-sm-3">Carne</dt>
+    <dd class="col-sm-9">@Model.Carne</dd>
+
+    <dt class="col-sm-3">Nombre</dt>
+    <dd class="col-sm-9">@Model.Nombre</dd>
+
+    <dt class="col-sm-3">Promedio</dt>
+    <dd class="col-sm-9">@Model.Promedio.ToString("0.0")</dd>
+</dl>
+
+<a class="btn btn-primary" asp-controller="Estudiante" asp-action="Listar">Volver al listado</a>

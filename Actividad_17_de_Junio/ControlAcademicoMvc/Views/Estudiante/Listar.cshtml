@@ -1,0 +1,38 @@
+@model IEnumerable<Estudiante>
+
+@{
+    ViewData["Title"] = "Listado de estudiantes";
+}
+
+<section class="mb-4">
+    <h1 class="h3">Listado de estudiantes</h1>
+    <p class="text-muted mb-0">Datos enviados desde el modelo hacia la vista mediante el controlador.</p>
+</section>
+
+<div class="table-responsive">
+    <table class="table table-striped align-middle">
+        <thead>
+            <tr>
+                <th>Carne</th>
+                <th>Nombre</th>
+                <th>Promedio</th>
+                <th>Historial</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (Estudiante estudiante in Model)
+            {
+                <tr>
+                    <td>@estudiante.Carne</td>
+                    <td>@estudiante.Nombre</td>
+                    <td>@estudiante.Promedio.ToString("0.0")</td>
+                    <td>
+                        <a class="btn btn-sm btn-outline-primary" asp-controller="Estudiante" asp-action="Historial" asp-route-id="@estudiante.Carne">
+                            Ver
+                        </a>
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</div>

@@ -1,0 +1,14 @@
+# .NET
+bin/
+obj/
+
+# Temporary files generated while preparing activities
+tmp/
+
+# IDE / OS
+.vs/
+.vscode/
+*.user
+*.suo
+Thumbs.db
+Desktop.ini
